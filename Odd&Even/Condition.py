@@ -5,3 +5,5 @@ if len(spy_name)>0:
     spy_salutation = raw_input("what should I call you Mr. or Mrs. or your wish: ")
     spy_name = spy_salutation + " " + spy_name
     print "Alright " + spy_name + " what are you good at..??"
+else:
+    print "!!!..A spy has not entered his/her name..!!!"
