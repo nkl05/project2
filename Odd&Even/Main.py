@@ -1,26 +1,31 @@
-from Spydetails import spy_name, spy_salutation, spy_age, spy_rating,spy_is_online
+from Startchat import start_chat
+from Spydetails import spy
 
 print "Lets get started"
-print "Do you want to continue as " + spy_salutation+" " +spy_name
+print "Do you want to continue as " + spy['salutation']+" " +spy['name']
 existing_user = raw_input("enter y/n")
 if(existing_user.upper() == "Y"):
     #procced with default user
-    spy_name = spy_salutation + " " + spy_name
-    print "Welcome Back " +spy_salutation +" " +spy_name
-    print "%s is your spy rating" % (spy_rating)
-    print "Your age is : %s" % (spy_age)
+    spy['name'] = spy['salutation'] + " " + spy['name']
+    print "Welcome Back " +spy['salutation'] +" " +spy['name']
+    print "%s is your spy rating" % (spy['spy_rating'])
+    print "Your age is : %s" % (spy['age'])
+    start_chat(spy['name'],spy['age'],spy['spy_rating'],spy['spy_is_online'])
 
-else:
+elif(existing_user.upper() == "N"):
     #new input
     spy_name = raw_input("Welcome to spy chat, you must enter your name here: ")
     #check is spy has something or not
     if len(spy_name)>0:
-        spy_salutation = raw_input("should I call you Mr. or Mrs. :")
-        spy_age = raw_input("What is your age")
-        spy_age = int(spy_age)
+        spy['salutation'] = raw_input("should I call you Mr. or Mrs. :")
+        spy['age'] = raw_input("What is your age")
+        spy['age'] = int(spy['age'])
 
-        spy_rating = raw_input("What is your spy rating")
-        spy_rating = float(spy_rating)
+        spy['spy_rating'] = raw_input("What is your spy rating")
+        spy['spy_rating'] = float(spy['spy_rating'])
 
         spy_is_online = True
-        print "Your authentication is verified %s %s\n Your seem to be a very young spy with an age of %s \n with an excellent rating of" % (spy_salutation,spy_name,spy_age)
+        print "Your authentication is verified %s %s\n Your seem to be a very young spy with an age of %s \n " % (spy['salutation'],spy['name'],spy['age'])
+        start_chat(spy['name'],spy['age'],spy['spy_rating'],spy['spy_is_online'])
+else:
+    print "wrong choice..!!"
