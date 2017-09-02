@@ -7,7 +7,7 @@ existing_user = raw_input("enter y/n")
 if(existing_user.upper() == "Y"):
     #procced with default user
     spy['name'] = spy['salutation'] + " " + spy['name']
-    print "Welcome Back " +spy['salutation'] +" " +spy['name']
+    print "Welcome Back " +" " +spy['name']
     print "%s is your spy rating" % (spy['spy_rating'])
     print "Your age is : %s" % (spy['age'])
     start_chat(spy['name'],spy['age'],spy['spy_rating'],spy['spy_is_online'])
