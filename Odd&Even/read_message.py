@@ -7,4 +7,4 @@ def read_message():
     secret_image = raw_input("Enter the name of encrypted image here : ")
     secret_image = Steganography.decode(secret_image)
 
-    print "your friendhas sent you this message :" + secret_image
+    print "your friend has sent you this message :" + secret_image

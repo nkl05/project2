@@ -7,6 +7,8 @@ def send_message():
     friend_choice = select_friend()
 
     original_image = raw_input("Enter the name of the image to hide the message : ")
+    #lets use regular expression..!!
+
     pattern = '^[0-9a-zA-Z\s]+\.jpg$'
     if(re.match(pattern,original_image) !=None):
         output_image = raw_input("enter name of the output image : ")

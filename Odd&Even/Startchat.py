@@ -3,8 +3,10 @@ from select_friend import select_friend
 from add_status import add_status
 from addfriend import add_friend
 from send_message import send_message
+from read_chat_history import read_chat_history
+from termcolor import colored,cprint
 
-def start_chat(name,age,rating,status):
+def start_chat(name,age,rating,spy_is_online):
     from globals import current_status_messages
     error_message = None
 
@@ -36,7 +38,9 @@ def start_chat(name,age,rating,status):
                 send_message()
             elif (result == 4):
                 read_message()
+            elif (result == 5):
+                read_chat_history()
             elif (result == 6):
                 show_menu = False
             else:
-                print "Wrong choice please try again...!!"
+                cprint ('Wrong choice entered please try again *_* ','red',attrs=['bold'])
